@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Opexis Digital – NFC AI Landing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<style>
+:root{
+  --blue:#004aad;
+  --line:rgba(148,163,184,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  min-height:100vh;
+  background:url("13.png") center/cover no-repeat fixed;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(2,6,23,.7);
+}
+
+.phone{
+  width:100%;
+  max-width:460px;
+  height:100vh;
+  background:rgba(2,8,23,.75);
+  backdrop-filter:blur(10px);
+  padding:16px;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  position:relative;
+  z-index:1;
+}
+
+header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.logo{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;
+}
+header div span:first-child{
+  font-size:14px;font-weight:700;letter-spacing:.08em;
+}
+header div span:last-child{
+  font-size:11px;color:#c2d4ff;
+}
+
+.card{
+  background:rgba(2,6,23,.6);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:12px;
+}
+.card h2{
+  font-size:14px;margin-bottom:6px;
+}
+.card .meta{
+  font-size:12px;margin-bottom:10px;
+  line-height:1.5;
+}
+.card a{color:#d1e3ff;text-decoration:none}
+
+.profile-photo{
+  float:right;
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  object-fit:cover;
+  margin:0 0 8px 10px;
+  border:2px solid rgba(255,255,255,.6);
+}
+
+.actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:8px;
+}
+
+.btn{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(2,6,23,.6);
+  color:#fff;
+  font-size:12px;
+  text-decoration:none;
+  cursor:pointer;
+  width:100%;
+}
+.dot{
+  width:9px;height:9px;border-radius:50%;
+  background:#fff;
+}
+
+.hero{text-align:center;}
+.hero h1{font-size:24px;margin:6px 0;}
+.hero h1 span{color:var(--blue)}
+.hero p{font-size:13px;color:#d1e3ff;}
+
+.video-box{
+  background:#000;
+  border-radius:16px;
+  overflow:hidden;
+  margin:8px 0;
+}
+video{width:100%;display:block;}
+.video-controls{display:flex;}
+.video-controls button{
+  flex:1;
+  padding:10px;
+  border:none;
+  background:#111;
+  color:#fff;
+  font-size:12px;
+  cursor:pointer;
+}
+
+.cta a{
+  display:block;
+  width:100%;
+  padding:14px;
+  text-align:center;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--blue),#001a4f);
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+}
+
+footer{
+  margin-top:auto;
+  text-align:center;
+  font-size:10px;
+  color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+<div class="phone">
+
+<header>
+  <div class="logo">O</div>
+  <div>
+    <span>Opexis Digital</span><br>
+    <span>Opportunity Nexus</span>
+  </div>
+</header>
+
+<section class="card">
+  <h2>VINCENZO PORTARO</h2>
+
+  <img src="13.png" alt="Vincenzo Portaro" class="profile-photo">
+
+  <div class="meta">
+    Email: <a href="mailto:vportaro02@gmail.com">vportaro02@gmail.com</a><br>
+    Telefono: <a href="tel:+393207057361">3207057361</a><br>
+    Facebook: <a href="https://www.facebook.com/share/1AfwLrZe3C/" target="_blank">Profilo Facebook</a><br>
+    Instagram: <a href="https://www.instagram.com/portyvinc?igsh=YzZ2eDgwd3ptOGV0" target="_blank">@portyvinc</a><br>
+    LinkedIn: <a href="https://www.linkedin.com/in/vincenzo-portaro-b8113a84" target="_blank">Profilo LinkedIn</a>
+  </div>
+
+  <div class="actions">
+    <a class="btn" href="tel:+393207057361"><span class="dot"></span>Chiama</a>
+    <a class="btn" href="mailto:vportaro02@gmail.com"><span class="dot"></span>Email</a>
+
+    <a class="btn" href="https://www.facebook.com/share/1AfwLrZe3C/" target="_blank"><span class="dot"></span>Facebook</a>
+    <a class="btn" href="https://www.instagram.com/portyvinc?igsh=YzZ2eDgwd3ptOGV0" target="_blank"><span class="dot"></span>Instagram</a>
+
+    <a class="btn" href="https://www.linkedin.com/in/vincenzo-portaro-b8113a84" target="_blank"><span class="dot"></span>LinkedIn</a>
+    <button class="btn" onclick="saveContact()"><span class="dot"></span>Salva in rubrica</button>
+  </div>
+</section>
+
+<section class="hero">
+  <h1>Il marketing <span>con AI</span></h1>
+
+  <div class="video-box">
+    <video id="introVideo" autoplay playsinline muted>
+      <source src="video_intro.mp4" type="video/mp4">
+    </video>
+    <div class="video-controls">
+      <button onclick="enableAudio()">🔊 Attiva audio</button>
+      <button onclick="stopVideo()">⏹ Stop</button>
+    </div>
+  </div>
+
+  <p>Scopri Twynet: social professionale, AI, formazione e opportunità di business.</p>
+</section>
+
+<section class="cta">
+  <a href="ai.html">💬 Parla con l’AI</a>
+</section>
+
+<footer>
+© <span id="year"></span> Opexis Digital
+</footer>
+
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const video=document.getElementById("introVideo");
+function enableAudio(){video.muted=false;video.play();}
+function stopVideo(){video.pause();video.currentTime=0;}
+
+function saveContact(){
+  const vcf=`BEGIN:VCARD
+VERSION:3.0
+FN:Vincenzo Portaro
+N:Portaro;Vincenzo;;;
+TEL;TYPE=CELL:+393207057361
+EMAIL;TYPE=INTERNET:vportaro02@gmail.com
+ADR;TYPE=WORK:;;Via Errico Petrella 81;Torino;Torino;10154;Italia
+END:VCARD`;
+
+  const blob=new Blob([vcf],{type:"text/vcard"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;
+  a.download="vincenzo-portaro.vcf";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+</script>
+
+</body>
+</html>
